@@ -26,3 +26,12 @@ section{
     overflow-x: hidden;
     padding: 1rem;
 }
+
+.hero-img{
+    max-height: 420px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 100%;
+    object-fit: cover;
+}
