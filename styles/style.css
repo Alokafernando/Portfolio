@@ -124,3 +124,11 @@ section{
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
+
+@media (min-width: 768px) {
+    .address {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+}
