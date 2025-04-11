@@ -35,3 +35,10 @@ section{
     border-radius: 100%;
     object-fit: cover;
 }
+
+.section-topic{
+    position: relative;
+    text-align: center;
+    margin: 3rem auto 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
