@@ -154,3 +154,11 @@ section{
 .middle-line{
     display: none;
 }
+
+@media (min-width: 768px) {
+    .middle-line {
+        display: block;
+        font-weight: 10;
+        font-size: 60px;
+    }
+}
