@@ -54,3 +54,10 @@ section{
     display: flex;
     flex-direction: column;
 }
+
+@media (min-width: 768px) {
+    .box {
+        flex-direction: row;
+        min-height: 70vh;
+    }
+}
