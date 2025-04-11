@@ -132,3 +132,25 @@ section{
         gap: 20px;
     }
 }
+
+.address-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.address-topic{
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.topic-description{
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    color: #fff;
+    text-decoration: none;
+}
+
+.middle-line{
+    display: none;
+}
