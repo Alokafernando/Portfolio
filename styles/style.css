@@ -61,3 +61,31 @@ section{
         min-height: 70vh;
     }
 }
+
+.about-fig{
+    position: relative;
+    max-width: 470px;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 0.7rem;
+    background: linear-gradient(transparent, transparent) padding-box, linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 100%);;
+    aspect-ratio: 1/1;
+}
+
+.about-img{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: filter 3s;
+}
