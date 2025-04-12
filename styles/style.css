@@ -189,3 +189,7 @@ section{
     transition: transform 1s;
     aspect-ratio: 1/1;
 }
+
+#Skills > article > figure:hover{
+    transform: scale(1.1);
+}
