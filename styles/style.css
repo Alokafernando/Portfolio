@@ -193,3 +193,10 @@ section{
 #Skills > article > figure:hover{
     transform: scale(1.1);
 }
+
+#Skills > article > figure > img {
+    height: 60px;
+    width: 60px;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
