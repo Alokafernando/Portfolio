@@ -162,3 +162,16 @@ section{
         font-size: 60px;
     }
 }
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    width: 95%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color:  rgba(217, 217, 217, 0.1);
+    border-radius: 10px;
+}
