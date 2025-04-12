@@ -200,3 +200,9 @@ section{
     max-width: 100%;
     margin-bottom: 15px;
 }
+
+#Skills > article > figure > figcaption {
+    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+    color: white;
+    text-align: center;
+}
