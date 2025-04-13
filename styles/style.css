@@ -206,3 +206,128 @@ section{
     color: white;
     text-align: center;
 }
+
+/* Education Section */
+#Education {
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.timeline-items {
+    max-width: 1200px;
+    margin: 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background-color: #FFFFFF;
+    left: 20px;
+}
+
+@media (min-width: 768px) {
+    .timeline-items::before {
+        left: calc(50% - 2px);
+    }
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+    padding-left: 50px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .timeline-item:nth-child(odd) {
+        padding-right: calc(50% + 30px);
+        padding-left: 0;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+        padding-left: calc(50% + 30px);
+        text-align: left;
+    }
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    position: absolute;
+    left: 2px;
+    border-radius: 50%;
+    top: 0;
+}
+
+@media (min-width: 768px) {
+    .timeline-dot {
+        height: 50px;
+        width: 50px;
+        left: calc(50% - 25px);
+    }
+}
+
+.timeline-dot>img{
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .timeline-dot>img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.timeline-date {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.timeline-content {
+    background-color: #111;
+    border: 3px solid #29E4EB;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px #29E4EB;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #29E4EB;
+}
+
+.timeline-content h3 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #fff;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    font-weight: 300;
+    line-height: 1.5;
+}
