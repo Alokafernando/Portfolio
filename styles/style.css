@@ -403,3 +403,20 @@ section{
     border: none;
     font-weight: bold;
 }
+
+.view-all-button {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    margin: 2rem auto;
+    background: #0055FE;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #0D6EFD;
+    transition: all 0.3s ease;
+}
+
+.view-all-button:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px 2px #0055FE;
+}
