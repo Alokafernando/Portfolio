@@ -382,3 +382,9 @@ section{
     object-fit: cover;
     margin-bottom: 1rem;
 }
+
+.caption {
+    font-weight: bold;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    margin-bottom: 2rem;
+}
