@@ -331,3 +331,19 @@ section{
     font-weight: 300;
     line-height: 1.5;
 }
+
+/* Projects Section */
+#Projects {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 95%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
