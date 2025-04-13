@@ -362,3 +362,15 @@ section{
     flex-direction: column;
     padding: 1rem;
 }
+
+.grid:hover > .card {
+    filter: blur(3px);
+    opacity: 0.5;
+}
+
+.grid > .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #29E4EB;
+    filter: blur(0) !important;
+    opacity: 1 !important;
+}
