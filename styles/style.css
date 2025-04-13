@@ -388,3 +388,18 @@ section{
     font-size: clamp(1rem, 1.5vw, 1.125rem);
     margin-bottom: 2rem;
 }
+
+.card-actions{
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-btn {
+    background-color: rgba(217, 217, 217, 0.9);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
