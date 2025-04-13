@@ -347,3 +347,18 @@ section{
     margin: 2rem auto;
     padding: 1rem;
 }
+
+.card {
+    position: relative;
+    border-radius: 10px;
+    height: 100%;
+    min-height: 300px;
+    border: 1px solid transparent;
+    background: linear-gradient(#0B0B0B, #0B0B0B) padding-box,
+    linear-gradient(270deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 100%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 100%);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
