@@ -420,3 +420,95 @@ section{
     transform: scale(1.1);
     box-shadow: 5px 5px 15px 2px #0055FE;
 }
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: rgba(217, 217, 217, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+    }
+
+}
+
+.contact-container>img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .contact-container>img {
+        flex: 1;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 768px){
+    .contact-container>img {
+        display: none;
+    }
+}
+
+.contact-container>form{
+    flex: 1;
+    padding: 1rem;
+}
+
+.form-group{
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-group>input, .form-group>textarea{
+    background: linear-gradient(to right, #3A3A3A, #E0E0E0);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 35px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.form-group>textarea{
+    min-height: 150px;
+    resize: vertical;
+    border-radius: 20px;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder{
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-group>input:focus, .form-group>textarea:focus {
+    outline: none;
+    box-shadow: 2px 3px 5px 2px #fff;
+}
+
+.form-group>.form-btn{
+    background: #0055FE;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+.form-group>.form-btn:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px 2px #0055FE;
+}
+
