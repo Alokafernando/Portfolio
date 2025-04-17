@@ -1277,19 +1277,13 @@ section:hover::before {
     box-shadow: 5px 5px 15px 2px #0055FE;
 }
 
-
-
+/* Footer */
 footer{
     width: 100%;
     padding: 2rem 1rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-}
-
-.contact-section>p>a{
-    text-decoration: none;
-    color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -1358,6 +1352,7 @@ footer{
     margin-right: 10px;
 }
 
+
 .contact-section>div>p, .contact-section>div>a{
     text-decoration: none;
     color: #fff;
@@ -1372,6 +1367,7 @@ footer{
     #social-links {
         grid-column: 2;
         grid-row: 2;
+        width: 220px;
     }
 }
 
@@ -1396,4 +1392,9 @@ footer>p{
     footer>p {
         grid-column: span 3;
     }
+}
+
+.contact-section>p>a{
+    text-decoration: none;
+    color: #fff;
 }
