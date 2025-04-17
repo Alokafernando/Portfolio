@@ -245,7 +245,7 @@ section:hover::before {
     top: 65%;
     transform: translateY(-50%);
     margin: auto;
-    z-index: 999;
+    z-index: 9;
     opacity: 0;
     animation: fadeIn 1.2s ease-in-out forwards;
     animation-delay: 0.5s;
@@ -330,6 +330,7 @@ section:hover::before {
     animation: fadeIn 2s ease-in-out forwards, subtleScale 8s ease-in-out infinite alternate;
     animation-delay: 0.3s;
     transition: transform 2s ease;
+    z-index: 5;
 }
 
 
@@ -347,7 +348,7 @@ section:hover::before {
 #social-icons {
     position: absolute;
     left: 20px;
-    top: 400px;
+    top: 50%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -579,6 +580,7 @@ section:hover::before {
     object-fit: cover;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
     transition: filter 3s, transform 1s;
+    z-index: 5;
 }
 
 .about-img:hover{
@@ -619,14 +621,9 @@ section:hover::before {
     height: 10px;
     bottom: 0;
     left: 0;
-    /*background-color: rgba(41, 228, 235, 0.3);*/
     z-index: -1;
     transition: width 0.5s ease;
 }
-
-/*#details-name:hover::before {*/
-/*    width: 100%;*/
-/*}*/
 
 @keyframes colorCycle {
     0% { color: #F18D30; }
@@ -863,6 +860,7 @@ section:hover::before {
     max-width: 100%;
     margin-bottom: 15px;
     transition: transform 0.3s;
+    z-index: 5;
 }
 
 #Skills > article > figure:hover > img {
@@ -905,7 +903,7 @@ section:hover::before {
     content: "";
     position: absolute;
     width: 4px;
-    height: 100%;
+    height: 120%;
     background-color: #FFFFFF;
     left: 20px;
     animation: glowingTimeline 2s infinite alternate;
@@ -1002,6 +1000,7 @@ section:hover::before {
 }
 
 .timeline-dot>img{
+    z-index: 5;
     position: absolute;
     height: 24px;
     width: 24px;
@@ -1085,12 +1084,18 @@ section:hover::before {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     width: 95%;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1145,6 +1150,7 @@ section:hover::before {
     border-radius: 10px;
     object-fit: cover;
     margin-bottom: 1rem;
+    z-index: 5;
 }
 
 .caption {
@@ -1207,6 +1213,7 @@ section:hover::before {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    z-index: 5;
 }
 
 @media (min-width: 768px) {
@@ -1349,6 +1356,7 @@ footer{
     width: 30px;
     background: grey;
     margin-right: 10px;
+    z-index: 5;
 }
 
 
