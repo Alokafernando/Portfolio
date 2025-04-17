@@ -888,7 +888,6 @@ section:hover::before {
     color: #29E4EB;
 }
 
-
 /* Education Section */
 #Education {
     padding: 5rem 1rem;
@@ -897,7 +896,7 @@ section:hover::before {
 
 .timeline-items {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 10rem auto;
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -910,6 +909,16 @@ section:hover::before {
     height: 100%;
     background-color: #FFFFFF;
     left: 20px;
+    animation: glowingTimeline 2s infinite alternate;
+}
+
+@keyframes glowingTimeline {
+    from {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    }
 }
 
 @media (min-width: 768px) {
@@ -924,6 +933,23 @@ section:hover::before {
     position: relative;
     padding-left: 50px;
     text-align: left;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeSlideIn 0.8s forwards;
+    animation-delay: calc(0.2s * var(--item-index, 1));
+}
+
+.timeline-item:nth-child(1) { --item-index: 1; }
+.timeline-item:nth-child(2) { --item-index: 2; }
+.timeline-item:nth-child(3) { --item-index: 3; }
+.timeline-item:nth-child(4) { --item-index: 4; }
+.timeline-item:nth-child(5) { --item-index: 5; }
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media (min-width: 768px) {
@@ -931,11 +957,13 @@ section:hover::before {
         padding-right: calc(50% + 30px);
         padding-left: 0;
         text-align: right;
+        transform: translateX(30px);
     }
 
     .timeline-item:nth-child(even) {
         padding-left: calc(50% + 30px);
         text-align: left;
+        transform: translateX(-30px);
     }
 }
 
@@ -951,6 +979,19 @@ section:hover::before {
     left: 2px;
     border-radius: 50%;
     top: 0;
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
 
 @media (min-width: 768px) {
@@ -971,10 +1012,12 @@ section:hover::before {
     margin: auto;
 }
 
+
 @media (min-width: 768px) {
     .timeline-dot>img {
         height: 30px;
         width: 30px;
+        top: 10px;
     }
 }
 
@@ -983,6 +1026,7 @@ section:hover::before {
     font-weight: 700;
     color: white;
     margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .timeline-content {
@@ -992,7 +1036,16 @@ section:hover::before {
     border-radius: 2rem;
     box-shadow: 0 0 10px #29E4EB;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    animation: borderColorChange 10s infinite alternate;
+}
+
+@keyframes borderColorChange {
+    0% { border-color: #29E4EB; box-shadow: 0 0 10px #29E4EB; }
+    25% { border-color: #F18D30; box-shadow: 0 0 10px #F18D30; }
+    50% { border-color: #9332B9; box-shadow: 0 0 10px #9332B9; }
+    75% { border-color: #0055FE; box-shadow: 0 0 10px #0055FE; }
+    100% { border-color: #29E4EB; box-shadow: 0 0 10px #29E4EB; }
 }
 
 .timeline-content:hover {
@@ -1005,6 +1058,11 @@ section:hover::before {
     font-weight: 500;
     color: #fff;
     margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.timeline-content:hover h3 {
+    color: #29E4EB;
 }
 
 .timeline-content p {
@@ -1012,7 +1070,13 @@ section:hover::before {
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     font-weight: 300;
     line-height: 1.5;
+    transition: transform 0.3s;
 }
+
+.timeline-content:hover p {
+    transform: translateX(5px);
+}
+
 
 /* Projects Section */
 #Projects {
