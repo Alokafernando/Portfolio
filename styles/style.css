@@ -784,18 +784,29 @@ section:hover::before {
     }
 }
 
-
-/* Skills Section */
+/* Skills Section - Enhanced card animations */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
     width: 95%;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 5rem auto;
     padding: 1rem;
-    background-color:  rgba(217, 217, 217, 0.1);
+    background-color: rgba(217, 217, 217, 0.1);
     border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.skills-grid:hover {
+    box-shadow: 0 5px 15px rgba(41, 140, 235, 0.4);
+    transform: translateY(-5px);
+}
+
+@media (min-width: 576px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
 }
 
 .skills-card {
@@ -808,12 +819,43 @@ section:hover::before {
     margin: 0.5rem;
     padding: 1rem;
     box-shadow: #29E4EB 5px 10px 10px;
-    transition: transform 1s;
+    transition: transform 0.3s, box-shadow 0.3s;
     aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.skills-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #29E4EB, #9332B9, #F18D30);
+    transition: width 0.5s ease;
+}
+
+.skills-card:hover::after {
+    width: 100%;
 }
 
 #Skills > article > figure:hover{
     transform: scale(1.1);
+    box-shadow: #29E4EB 5px 10px 20px;
 }
 
 #Skills > article > figure > img {
@@ -821,13 +863,31 @@ section:hover::before {
     width: 60px;
     max-width: 100%;
     margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+#Skills > article > figure:hover > img {
+    transform: rotate(10deg);
+}
+
+@media (max-width: 480px) {
+    #Skills > article > figure > img {
+        height: 40px;
+        width: 40px;
+    }
 }
 
 #Skills > article > figure > figcaption {
     font-size: clamp(0.9rem, 1.5vw, 1.125rem);
     color: white;
     text-align: center;
+    transition: color 0.3s;
 }
+
+#Skills > article > figure:hover > figcaption {
+    color: #29E4EB;
+}
+
 
 /* Education Section */
 #Education {
