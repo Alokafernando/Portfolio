@@ -1186,8 +1186,7 @@ section:hover::before {
     box-shadow: 5px 5px 15px 2px #0055FE;
 }
 
-
-
+/* Contact Section */
 .contact-container{
     display: flex;
     flex-direction: column;
@@ -1203,7 +1202,6 @@ section:hover::before {
     .contact-container {
         flex-direction: row;
     }
-
 }
 
 .contact-container>img{
@@ -1227,7 +1225,7 @@ section:hover::before {
 
 .contact-container>form{
     flex: 1;
-    padding: 1rem;
+    padding: 10rem 3rem;
 }
 
 .form-group{
@@ -1278,6 +1276,8 @@ section:hover::before {
     transform: scale(1.1);
     box-shadow: 5px 5px 15px 2px #0055FE;
 }
+
+
 
 footer{
     width: 100%;
