@@ -313,7 +313,7 @@ section:hover::before {
     width: min(90vw, 800px);
     height: auto;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
     padding: 0;
     margin: 0;
