@@ -129,7 +129,7 @@ section:hover::before {
         transform: scale(1);
     }
     to {
-        text-shadow:  0 0 30px rgba(41, 228, 235, 0.7);
+        text-shadow:  0 0 20px rgba(41, 228, 235, 0.7);
         transform: scale(1.05);
     }
 }
@@ -250,6 +250,7 @@ section:hover::before {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    color: #f0f0f0;
 }
 
 #line-01::before {
@@ -275,7 +276,7 @@ section:hover::before {
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     }
     to {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px #1E90FF;
     }
 }
 
@@ -296,15 +297,12 @@ section:hover::before {
 
 @keyframes textStrokeEffect {
     0% {
-        -webkit-text-stroke: 1px #29E4EB;
-        /*text-shadow: 0 0 10px rgba(41, 228, 235, 0.6);*/
-        text-shadow: 0 0 10px rgba(0, 85, 254, 0.6);
-
+        -webkit-text-stroke: 1px #00BFFF;
+        text-shadow: 0 0 10px rgba(0, 95, 225, 0.6);
     }
     100% {
-        -webkit-text-stroke: 1.5px #29E4EB;
-        /*text-shadow: 0 0 10px rgba(41, 228, 235, 0.6);*/
-        text-shadow: 0 0 10px rgba(0, 85, 254, 0.6);
+        -webkit-text-stroke: 1.5px #00BFFF;
+        text-shadow: 0 0 20px rgba(0, 95, 225, 0.8);
     }
 }
 
@@ -313,7 +311,7 @@ section:hover::before {
     width: min(90vw, 800px);
     height: auto;
     left: 50%;
-    top: 60%;
+    top: 50%;
     transform: translate(-50%, -50%);
     padding: 0;
     margin: 0;
@@ -321,10 +319,12 @@ section:hover::before {
     filter: grayscale(100%) contrast(1.2);
     animation: fadeIn 2s ease-in-out forwards, subtleScale 8s ease-in-out infinite alternate;
     animation-delay: 0.3s;
-    transition: transform 2s ease;
-    z-index: 5;
+    transition: transform 2s ease, filter 2s ease;
 }
 
+.hero-img:hover {
+    filter: grayscale(70%) contrast(1.25) brightness(1.1);
+}
 
 @keyframes subtleScale {
     0% {
@@ -364,7 +364,7 @@ section:hover::before {
 
 #social-icons > a {
     font-size: 1.5rem;
-    color: #29E4EB;
+    color: #00BFFF;
     cursor: pointer;
     transition: color 0.3s, transform 0.3s;
     display: block;
@@ -383,7 +383,6 @@ section:hover::before {
     color: white;
     transform: translateX(5px) scale(1.2) rotate(10deg);
 }
-
 
 @media (max-width: 576px) {
     #social-icons > a:hover {
@@ -1801,14 +1800,13 @@ footer::after {
     width: 30px;
     background: grey;
     margin-right: 10px;
-    z-index: 5;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 
 .contact-section:hover .img {
     transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 0 10px rgba(41, 228, 235, 0.5);
+    box-shadow: 0 0 15px rgba(41, 228, 235, 0.5);
 }
 
 .contact-section > div > p, .contact-section > div > a {
@@ -1817,9 +1815,11 @@ footer::after {
     transition: all 0.3s ease;
 }
 
-.contact-section:hover > div > p, .contact-section:hover > div > a {
+.contact-section:hover p,
+.contact-section:hover a {
     color: #29E4EB;
 }
+
 
 #social-links{
     margin: 1rem 0;
@@ -1837,7 +1837,7 @@ footer::after {
 #social-links>a{
     font-size: 1.5rem;
     margin: 0 0.5rem;
-    color: #29E4EB;
+    color: #00BFFF;
     transition: color 0.3s;
 }
 
