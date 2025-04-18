@@ -282,12 +282,14 @@ section:hover::before {
 
 #line-02 {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    color: transparent;
+    color: #000;
     opacity: 0;
     transform: translateY(30px);
     animation: slideUpFade 0.8s ease-in-out forwards, textStrokeEffect 3s infinite alternate;
     animation-delay: 1s;
     letter-spacing: -1px;
+    -webkit-text-stroke: 1px #00BFFF;
+    text-shadow: 0 0 10px rgba(0, 95, 225, 0.6);
     transition: letter-spacing 1s ease;
 }
 
