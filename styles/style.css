@@ -37,6 +37,7 @@ section{
     opacity: 0;
     transform: translateY(30px);
     animation: sectionFadeIn 0.8s forwards;
+
 }
 
 @keyframes sectionFadeIn {
@@ -201,22 +202,55 @@ section:hover::before {
     box-shadow: 0 0 8px rgba(41, 228, 235, 0.8);
 }
 
-#nav-bar>button{
+
+#nav-btn{
     display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
+
 }
 
 @media (max-width: 768px) {
-    #nav-links {
-        display: none;
+
+    #nav-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 100;
+        position: relative;
     }
 
-    #nav-bar>button {
+    #nav-links {
+        position: fixed;
+        top: 8vh;
+        right: -270px;
+        width: 250px;
+        height: 100vh;
+        background-color: #000;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        z-index: 99;
+        overflow-y: auto;
+        padding: 20px 0;
+        border: 1px solid #29E4EB;
+        border-radius: 10px;
+    }
+
+    #nav-links.active {
+        right: 0;
+    }
+
+    #nav-links > ul {
         display: block;
+        padding-left: 80px;
+        padding-right: 20px;
+        margin: 0;
+        list-style: none;
+    }
+
+    #nav-links > ul > li {
+        margin: 15px 0;
+        padding-left: 10px;
     }
 
     #nav-bar>#logo {
@@ -313,7 +347,7 @@ section:hover::before {
     width: min(90vw, 800px);
     height: auto;
     left: 50%;
-    top: 45%;
+    top: 40%;
     transform: translate(-50%, -50%);
     padding: 0;
     margin: 0;
