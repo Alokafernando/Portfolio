@@ -756,6 +756,7 @@ section:hover::before {
     line-height: 1.6;
     position: relative;
     overflow: hidden;
+    word-spacing: 100px; !important;
 }
 
 #details-desc::after {
@@ -1964,4 +1965,216 @@ footer>p{
 .contact-section>p>a{
     text-decoration: none;
     color: #fff;
+}
+
+/*============================================================*/
+/* Scroll Animation Styles */
+
+/* Section animation on scroll */
+section {
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.section-active {
+    position: relative;
+    z-index: 2;
+}
+
+/* Card reveal animation */
+.card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-card {
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0.8) rotate(-5deg);
+    opacity: 0.5;
+}
+
+.skill-animate {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+.timeline-item {
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: rgba(41, 228, 235, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    animation: rippleEffect 2s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+}
+
+@keyframes rippleEffect {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.8;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+.particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: #29E4EB;
+    border-radius: 50%;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-100px) translateX(50px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-200px) translateX(-50px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-300px) translateX(100px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(-400px) translateX(0) rotate(360deg);
+    }
+}
+
+.scroll-indicator {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #29E4EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator.visible {
+    opacity: 1;
+}
+
+.scroll-indicator::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #29E4EB;
+    border-bottom: 2px solid #29E4EB;
+    transform: rotate(45deg) translateY(-5px);
+    animation: scrollIndicator 2s infinite;
+}
+
+@keyframes scrollIndicator {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+}
+
+.box, .skills-card, .timeline-content, .card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+@keyframes textHighlightScroll {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.section-topic {
+    background: linear-gradient(90deg, transparent, rgba(41, 228, 235, 0.8), transparent);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #fff;
+    animation: textHighlightScroll 4s linear infinite;
+}
+
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: transparent;
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #29E4EB, #9332B9, #F18D30);
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+.about-img {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.section-active .about-img {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.animated-text {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.section-active .animated-text {
+    opacity: 1;
+    transform: translateY(0);
 }

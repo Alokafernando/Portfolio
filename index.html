@@ -20,6 +20,13 @@
 </head>
 <body>
 
+<div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+
+<div class="scroll-indicator" id="scrollIndicator"></div>
+
+
 <header id="nav-bar">
 
     <div id="logo">
@@ -408,6 +415,39 @@
 <script src="assets/lib/fontawesome/js/all.min.js"></script>
 <script src="js/section-animation.js"></script>
 <script src="js/side-bar.js"></script>
+<script src="scroll-animations.js"></script>
+
+<script>
+    // Progress bar functionality
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+
+        // Show scroll indicator when not at the bottom of the page
+        const scrollIndicator = document.getElementById("scrollIndicator");
+        if (scrolled < 98) {
+            scrollIndicator.classList.add("visible");
+        } else {
+            scrollIndicator.classList.remove("visible");
+        }
+    });
+
+    // Apply animated text effect to paragraphs
+    document.querySelectorAll('#details-desc, .timeline-content p, .caption').forEach(paragraph => {
+        const text = paragraph.textContent;
+        paragraph.textContent = '';
+
+        text.split(' ').forEach((word, index) => {
+            const span = document.createElement('span');
+            span.className = 'animated-text';
+            span.style.transitionDelay = `${index * 0.05}s`;
+            span.textContent = word + ' ';
+            paragraph.appendChild(span);
+        });
+    });
+</script>
 
 </body>
 </html>
