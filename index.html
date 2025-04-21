@@ -412,20 +412,19 @@
     <p>&copy; 2025 Buddhika Fernando | All Rights Reserved</p>
 </footer>
 
+
 <script src="assets/lib/fontawesome/js/all.min.js"></script>
-<script src="js/section-animation.js"></script>
 <script src="js/side-bar.js"></script>
+<script src="js/section-animation.js"></script>
 <script src="scroll-animations.js"></script>
 
 <script>
-    // Progress bar functionality
     window.addEventListener('scroll', function() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
 
-        // Show scroll indicator when not at the bottom of the page
         const scrollIndicator = document.getElementById("scrollIndicator");
         if (scrolled < 98) {
             scrollIndicator.classList.add("visible");
@@ -434,7 +433,6 @@
         }
     });
 
-    // Apply animated text effect to paragraphs
     document.querySelectorAll('#details-desc, .timeline-content p, .caption').forEach(paragraph => {
         const text = paragraph.textContent;
         paragraph.textContent = '';

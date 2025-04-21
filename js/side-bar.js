@@ -1,41 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navBtn = document.getElementById('nav-btn');
     const navLinks = document.getElementById('nav-links');
-
-    function isMobileView() {
-        return window.innerWidth <= 768;
-    }
+    const closeBtn = document.querySelector('#nav-links.active::before'); // This won't work as expected
 
     navBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
         navLinks.classList.toggle('active');
-
-        if (isMobileView()) {
-            navBtn.style.display = 'none';
-        }
     });
 
+    // Handle the close button (×) click
     navLinks.addEventListener('click', function(event) {
-
+        // Get the clicked position within the navLinks element
         const rect = navLinks.getBoundingClientRect();
         const clickX = event.clientX - rect.left;
         const clickY = event.clientY - rect.top;
 
+        // Check if click is in the top-right corner where the × is located
+        // Adjust these values based on your CSS positioning
         if (clickX >= rect.width - 50 && clickY <= 50) {
             navLinks.classList.remove('active');
-
-            if (isMobileView()) {
-                navBtn.style.display = 'block';
-            }
         }
     });
 
     document.addEventListener('click', function(event) {
         if (!navLinks.contains(event.target) && event.target !== navBtn) {
             navLinks.classList.remove('active');
-
-            if (isMobileView()) {
-                navBtn.style.display = 'block';
-            }
         }
     });
 
@@ -43,22 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     links.forEach(link => {
         link.addEventListener('click', function() {
             navLinks.classList.remove('active');
-
-            if (isMobileView()) {
-                navBtn.style.display = 'block';
-            }
         });
     });
-
-    window.addEventListener('resize', function() {
-        if (!isMobileView()) {
-            navBtn.style.display = 'none';
-        } else {
-            navBtn.style.display = navLinks.classList.contains('active') ? 'none' : 'block';
-        }
-    });
-
-    if (!isMobileView()) {
-        navBtn.style.display = 'none';
-    }
 });
