@@ -1,13 +1,27 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const cards = document.querySelectorAll('.card');
     const skills = document.querySelectorAll('.skills-card');
     const timelineItems = document.querySelectorAll('.timeline-item');
-
     const heroImg = document.querySelector('.hero-img');
-
     const navbar = document.getElementById('nav-bar');
+
+    // Add scroll indicator functionality
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function() {
+            const footer = document.querySelector('footer');
+            if (footer) {
+                footer.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // If no footer is found, scroll to the bottom of the page
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 
     createParticles();
 
